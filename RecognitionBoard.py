@@ -43,7 +43,8 @@ try:
     columns_from_df1 = ["Employee Id", "Employee Name", "Manager Name", "Designation", "Account Name", "Rank"]
 
     # --- Merge nomination data with employee data ---
-    merged_df = df.merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
+    merged_df = df.copy()
+    #merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
 
     # --- Ensure approval status columns exist ---
     if "AL Approval Status" not in merged_df.columns:
