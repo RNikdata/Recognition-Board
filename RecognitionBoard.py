@@ -15,10 +15,9 @@ st.set_page_config(
 )
 
 # --- Google Sheets setup ---
-scope = ["https://www.googleapis.com/auth/spreadsheets",
-          "https://www.googleapis.com/auth/drive"]
-
-# Use your service account JSON or Streamlit secrets
+# --- Connect to Google Sheets using Streamlit secrets ---
+service_account_info = st.secrets["google_service_account"]
+scopes = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
 credentials = Credentials.from_service_account_info(st.secrets["google_service_account"], scopes=scope)
 gc = gspread.authorize(credentials)
 
