@@ -1,6 +1,10 @@
-streamlit
 pandas
+numpy
 gspread
 gspread-dataframe
 google-auth
-numpy
+google-auth-oauthlib
+google-auth-httplib2
+protobuf
+openpyxl
+requests
