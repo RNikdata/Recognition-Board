@@ -262,6 +262,8 @@ elif st.session_state.get("active_page") == "AL Selection Board":
             return f'color: {color}; font-weight:bold'
     
         # Show styled table
+        st.dataframe(merged_df)
+    
         st.dataframe(
             df_display[["Nomination ID", "Employee ID", "Employee Name", "Manager Name", "Designation", "Account Name", "Rank", "Nominated Title", "Self Nomination Reason", "AL Approval Status", "AL Comment"]]
             .style.applymap(color_status, subset=["AL Approval Status"]),
