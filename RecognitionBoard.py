@@ -35,15 +35,11 @@ try:
     df = get_as_dataframe(nomination_sheet, evaluate_formulas=True).dropna(how="all")
     df1 = get_as_dataframe(employee_sheet, evaluate_formulas=True).dropna(how="all")
 
-    # --- Convert IDs to string 
-    df1["Employee Id"] = df1["Employee Id"].astype(str)
-
     # --- Columns to bring from df1 ---
     columns_from_df1 = ["Employee Id", "Employee Name", "Manager Name", "Designation", "Account Name", "Rank"]
 
     # --- Merge nomination data with employee data ---
-    merged_df = df.copy()
-    #merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
+    merged_df = df.merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
 
     # --- Ensure approval status columns exist ---
     if "AL Approval Status" not in merged_df.columns:
