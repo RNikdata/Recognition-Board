@@ -57,46 +57,6 @@ except Exception as e:
     st.error(f"Error loading Google Sheets data: {e}")
     st.stop()
 
-# --- Load Data --- (for local testing & development)
-
-# -------------------------------
-# Load Excel files once at the top
-# -------------------------------
-# try:
-#     excel_path = r"C:\Users\nikhil.r\OneDrive - Mu Sigma Business Solutions Pvt. Ltd\Desktop\Jupyter\Recognition Board\Nomination Data.xlsx"
-#     employee_data_excel_path = r"C:\Users\nikhil.r\OneDrive - Mu Sigma Business Solutions Pvt. Ltd\Desktop\Jupyter\Resource Transfer Board\Employee Data.xlsx"
-
-#     df = pd.read_excel(excel_path)
-#     df1 = pd.read_excel(employee_data_excel_path)
-
-#     # Convert IDs to string
-#     df["Employee ID"] = df["Employee ID"].astype(str)
-#     df1["Employee Id"] = df1["Employee Id"].astype(str)
-
-#     # Columns to bring from df1
-#     columns_from_df1 = ["Employee Id", "Employee Name", "Manager Name", "Designation", "Account Name", "Rank"]
-
-#     # Merge df with df1
-#     merged_df = df.merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
-
-#     # Ensure approval status columns exist
-#     # Ensure column exists
-#     if "AL Approval Status" not in merged_df.columns:
-#         merged_df["AL Approval Status"] = "Pending"
-#     else:
-#         # Replace blank or NaN values with "Pending"
-#         merged_df["AL Approval Status"] = merged_df["AL Approval Status"].fillna("Pending")
-
-#     if "BU Head Approval Status" not in merged_df.columns:
-#         merged_df["BU Head Approval Status"] = "Pending"
-#     else:
-#         # Replace blank or NaN values with "Pending"
-#         merged_df["BU Head Approval Status"] = merged_df["BU Head Approval Status"].fillna("Pending")
-
-# except Exception as e:
-#     st.error(f"Error loading Excel files: {e}")
-#     st.stop()
-
 #######################################
 # --- Page Navigation Setup ---
 #######################################
