@@ -412,7 +412,7 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
                 merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = bu_rank
         
                 # Save only original df columns
-                merged_df[df.columns.tolist()].to_excel(excel_path, index=False)
+                set_with_dataframe(nomination_sheet, merged_df)
         
                 st.success(f"Nomination ID {selected_id} has been {approval_choice}d successfully!")
                 time.sleep(2)
