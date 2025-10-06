@@ -18,7 +18,7 @@ st.set_page_config(
 # --- Connect to Google Sheets using Streamlit secrets ---
 service_account_info = st.secrets["google_service_account"]
 scopes = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-credentials = Credentials.from_service_account_info(st.secrets["google_service_account"], scopes=scope)
+credentials = Credentials.from_service_account_info(service_account_info, scopes=scopes)
 gc = gspread.authorize(credentials)
 
 # # Your Google Sheet ID and worksheet name
@@ -295,7 +295,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         
             # Save back to Excel (only original df columns + new comment column)
             cols_to_save = df.columns.tolist()
-            merged_df[cols_to_save].to_excel(excel_path, index=False)
+            set_with_dataframe(nomination_sheet, merged_df)
 
             # Clear the text area after submission
             st.session_state["al_comment_input"] = ""
