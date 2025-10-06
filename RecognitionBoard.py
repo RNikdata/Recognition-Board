@@ -2,11 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import gspread
-from gspread_dataframe import get_as_dataframe, set_with_dataframe
+from gspread_dataframe import get_as_dataframe
 from google.oauth2.service_account import Credentials
-import streamlit.components.v1 as components
-import time
-import hashlib
 
 st.set_page_config(
     page_title="Recognition Board",  # <-- Browser tab name
