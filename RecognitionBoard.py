@@ -522,10 +522,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if rising_stars:
             rising_html += "<div style='display:flex; flex-direction:column; gap:4px;'>"
             for name in rising_stars:
-                rising_html += f"<div style='font-size:14px; color:white; text-align:left;'>{name}</div>"
+                rising_html += f"<div style='font-size:14px; color:#999999; text-align:left;'>{name}</div>"
             rising_html += "</div>"
         else:
-            rising_html = "<div style='font-size:14px;'>No Rising Stars</div>"
+            rising_html = "<div style='font-size:14px; color:#999999;'>No Rising Stars</div>"
     
         return f"""
         <div style="
@@ -560,7 +560,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <!-- Rising Stars Column -->
         <div style="flex:1;">
         <br>
-        <div style='font-weight:bold; font-size:18px; margin-bottom:5px; color:#999999;'>Rising Stars</div>
+        <div style='font-weight:bold; font-size:18px; margin-bottom:5px; color:#006666;'>Rising Stars</div>
             {rising_html}
         </div>
 
