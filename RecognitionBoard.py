@@ -602,7 +602,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#ccc; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
-            <div style="width: {width}px; height: {height}px; background: linear-gradient(135deg, #4B6C86, #2F3E46);
+            <div style="width: {width}px; height: {height}px; background: linear-gradient(135deg, #800000, #006666);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
