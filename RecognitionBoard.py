@@ -560,7 +560,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <!-- Rising Stars Column -->
         <div style="flex:1;">
         <br>
-        <div style='font-weight:bold; font-size:18px; margin-bottom:5px; color:#006666;'>Rising Stars</div>
+        <div style='font-weight:bold; font-size:18px; margin-bottom:5px; color:#999999;'>Rising Stars</div>
             {rising_html}
         </div>
 
