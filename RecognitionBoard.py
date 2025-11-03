@@ -542,7 +542,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         margin: 5px 0;
         ">
         <!-- Award Title -->
-        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
             🏆 {award_name}
         </div>
     
@@ -553,7 +553,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="flex:1; display:flex; flex-direction:column; align-items:flex-start; text-align:left;">
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
-            <div style='font-size:14px; font-weight:bold; color:#FFD700;'>{winner_name}</div>
+            <div style='font-size:14px; font-weight:bold; color:#697F97;'>{winner_name}</div>
             <div style='font-size:14px; color:#ccc;'>{winner_id}</div>
         </div>
     
@@ -583,7 +583,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
             margin: 5px 0;
         ">
-            <div style='font-weight:bold;justify-content: flex-start; font-size:16px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block;text-align:left;'>
+            <div style='font-weight:bold;justify-content: flex-start; font-size:16px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block;text-align:left;'>
                 🏆 {award_name}
             </div>
             <div style='text-align:center; justify-content: center; margin-bottom:5px;'>
@@ -606,7 +606,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -630,7 +630,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -653,7 +653,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -677,7 +677,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -700,7 +700,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -724,7 +724,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#FFD700; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#697F97; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
