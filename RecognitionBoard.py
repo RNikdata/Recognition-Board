@@ -553,7 +553,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="flex:1; display:flex; flex-direction:column; align-items:flex-start; text-align:left;">
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
-            <div style='font-size:14px; font-weight:bold; color:#000000;'>{winner_name}</div>
+            <div style='font-size:14px; font-weight:bold; color:#444444;'>{winner_name}</div>
             <div style='font-size:14px;  color:#444444;'>{winner_id}</div>
         </div>
     
@@ -621,7 +621,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px; color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:12px; color:#444444;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#444444; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
@@ -668,7 +668,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px; color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:12px; color:#444444;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#444444; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
@@ -715,7 +715,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='flex:0 0 auto;display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px;color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:12px;color:#444444;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px;  color:#444444;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
