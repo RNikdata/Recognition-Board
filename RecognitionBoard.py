@@ -439,7 +439,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     <div style="
         width: 300px;
         height: 180px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         padding: 0;
         color: white;
@@ -460,7 +460,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     <div style="
         width: 300px;
         height: 375px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         padding: 0;
         color: white;
@@ -480,7 +480,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     <div style="
         width: 1295px;
         height: 250px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         padding: 0;
         color: white;
@@ -500,7 +500,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     <div style="
         width: 300px;
         height: 250px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         padding: 0;
         color: white;
@@ -531,7 +531,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="
         width: auto;
         height: {height}px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 12px;
         padding: 10px;
         color: white;
@@ -573,7 +573,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="
             width: {width}px;
             height: {height}px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
             padding: 10px;
             color: white;
@@ -602,7 +602,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#ccc; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
-            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
@@ -626,7 +626,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "</div>"
     
             html = f"""
-            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
@@ -649,7 +649,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#ccc; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
-            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
@@ -673,7 +673,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "</div>"
     
             html = f"""
-            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: {width}px; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
@@ -696,7 +696,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#ccc; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
-            <div style="width: auto; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: auto; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
@@ -720,7 +720,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "</div>"
     
             html = f"""
-            <div style="width: 100%; height: {height}px; background: rgba(255, 255, 255, 0.85);
+            <div style="width: 100%; height: {height}px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.3);
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
