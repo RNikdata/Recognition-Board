@@ -522,10 +522,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
         if rising_stars:
             rising_html += "<div style='display:flex; flex-direction:column; gap:4px;'>"
             for name in rising_stars:
-                rising_html += f"<div style='font-size:14px; color:#999999; text-align:left;'>{name}</div>"
+                rising_html += f"<div style='font-size:14px; color:#888888; text-align:left;'>{name}</div>"
             rising_html += "</div>"
         else:
-            rising_html = "<div style='font-size:14px; color:#999999;'>No Rising Stars</div>"
+            rising_html = "<div style='font-size:14px; color:#888888;'>No Rising Stars</div>"
     
         return f"""
         <div style="
@@ -553,8 +553,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="flex:1; display:flex; flex-direction:column; align-items:flex-start; text-align:left;">
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
-            <div style='font-size:14px; font-weight:bold; color:#999999;'>{winner_name}</div>
-            <div style='font-size:14px;  color:#999999;'>{winner_id}</div>
+            <div style='font-size:14px; font-weight:bold; color:#888888;'>{winner_name}</div>
+            <div style='font-size:14px;  color:#888888;'>{winner_id}</div>
         </div>
     
         <!-- Rising Stars Column -->
@@ -621,8 +621,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px; color:#999999;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#999999; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -668,8 +668,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px; color:#999999;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#999999; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -715,8 +715,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='flex:0 0 auto;display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px;color:#999999;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px;  color:#999999;  text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:12px;color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:11px;  color:#888888;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
