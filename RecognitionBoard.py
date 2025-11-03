@@ -554,7 +554,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
             <div style='font-size:14px; font-weight:bold; color:#000000;'>{winner_name}</div>
-            <div style='font-size:14px;  color:#D3D3D3;'>{winner_id}</div>
+            <div style='font-size:14px;  color:#333333;'>{winner_id}</div>
         </div>
     
         <!-- Rising Stars Column -->
@@ -622,7 +622,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#D3D3D3; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#333333; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -669,7 +669,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#D3D3D3; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#333333; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -716,7 +716,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px;color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px;  color:#D3D3D3;  text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px;  color:#333333;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
