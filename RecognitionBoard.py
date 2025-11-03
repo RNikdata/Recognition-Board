@@ -525,7 +525,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 rising_html += f"<div style='font-size:14px; color:white; text-align:left;'>{name}</div>"
             rising_html += "</div>"
         else:
-            rising_html = "<div style='font-size:14px; color:#111111;'>No Rising Stars</div>"
+            rising_html = "<div style='font-size:14px;'>No Rising Stars</div>"
     
         return f"""
         <div style="
@@ -554,7 +554,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
             <div style='font-size:14px; font-weight:bold; color:#000000;'>{winner_name}</div>
-            <div style='font-size:14px; color:#111111;'>{winner_id}</div>
+            <div style='font-size:14px;'>{winner_id}</div>
         </div>
     
         <!-- Rising Stars Column -->
@@ -591,7 +591,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                  style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff;'>
             </div>
             <div style='font-size:14px;'>{winner_name}</div>
-            <div style='font-size:12px; color:#111111;'>{winner_id}</div>
+            <div style='font-size:12px;'>{winner_id}</div>
         </div>
         """
     def get_box_html_impact_multiple(award_name, winners, width, height):
@@ -600,7 +600,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         """
         # If winners list is empty, show "No Winners"
         if not winners:
-            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#111111; text-align:center; width:100%;height:100%;'>No Winners</div>"
+            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
             <div style="width: {width}px; height: {height}px; background: transparent;
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
@@ -622,7 +622,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#111111; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -647,7 +647,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         """
         # If winners list is empty, show "No Winners"
         if not winners:
-            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#111111; text-align:center; width:100%;height:100%;'>No Winners</div>"
+            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
             <div style="width: {width}px; height: {height}px; background: transparent;
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
@@ -669,7 +669,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#111111; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -694,7 +694,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         """
         # If winners list is empty, show "No Winners"
         if not winners:
-            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; color:#111111; text-align:center; width:100%;height:100%;'>No Winners</div>"
+            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px;  text-align:center; width:100%;height:100%;'>No Winners</div>"
             html = f"""
             <div style="width: auto; height: {height}px; background: transparent;
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
@@ -716,7 +716,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#111111; text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
