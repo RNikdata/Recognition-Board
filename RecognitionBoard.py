@@ -669,7 +669,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px; color:#D3D3D3;  text-align:center;'>{w['id']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#D3D3D3; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
             html = f"""
@@ -715,7 +715,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_html += "<div style='flex:0 0 auto;display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px; font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:12px;color:#000000;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px;  color:#D3D3D3;  text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
