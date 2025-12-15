@@ -693,6 +693,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             """
         return html
 
+
     def get_box_html_spot_multiple(award_name, winners, width, height):
         """
         winners: list of dicts with keys 'name', 'id', 'photo'
@@ -718,8 +719,38 @@ elif st.session_state.get("active_page") == "Final Display Board":
             winners_html = ""
             for w in winners:
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
+            
+                # Image wrapper (relative for floating badge)
+                winners_html += "<div style='position:relative; display:inline-block; margin-bottom:5px;'>"
+            
                 if w.get('photo', "") != "":
-                    winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
+                    winners_html += f"""
+                        <img src='{w['photo']}'
+                             style='width:80px; height:80px; border-radius:50%;
+                                    object-fit:cover; border:2px solid #fff;'>
+                    """
+            
+                # Floating NEW badge
+                if w.get("is_new"):
+                    winners_html += """
+                        <div style='
+                            position:absolute;
+                            top:-6px;
+                            right:-6px;
+                            background:#ff3b3b;
+                            color:#fff;
+                            font-size:10px;
+                            font-weight:bold;
+                            padding:2px 6px;
+                            border-radius:12px;
+                            box-shadow:0 2px 6px rgba(0,0,0,0.3);
+                        '>
+                            NEW
+                        </div>
+                    """
+            
+                winners_html += "</div>"  # end image wrapper
+            
                 winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
@@ -897,17 +928,21 @@ elif st.session_state.get("active_page") == "Final Display Board":
         ].copy()
         
         winners_list = []
-    
+        
         if not award_df.empty:
             for _, row in award_df.iterrows():
                 emp_id = str(int(row["Employee ID"]))
                 photo_url = fetch_employee_url(emp_id)
-                
+        
+                is_new = row["Which title would you like to nominate yourself for?"] == "Spot Award"
+        
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
-                    "photo": photo_url
+                    "photo": photo_url,
+                    "is_new": is_new   # ✅ flag for floating indicator
                 })
+        
 
         box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=350)
         st.markdown(box_html2, unsafe_allow_html=True)
