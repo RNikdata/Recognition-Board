@@ -734,7 +734,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     winners_html += f"<div style='font-size:11px;  color:#888888;  text-align:center;'>{w['id']}</div>"
                     winners_html += "</div>"
 
-                    winners_html += f"""<div style='flex:1;font-size:12px;color:#cccccc;line-height:1.4; word-wrap:break-word; overflow-wrap:break-word; white-space:normal;'> {w.get("comment", "")}</div>"""
+                    winners_html += f"""<div style='flex:1;font-size:12px;color:#000000;line-height:1.4; word-wrap:break-word; overflow-wrap:break-word; white-space:normal;'> {w.get("comment", "")}</div>"""
 
                     winners_html += "</div>"
         
