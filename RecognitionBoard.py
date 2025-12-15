@@ -865,6 +865,25 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
     with col2:
     
+        # Second row box (smaller)
+        award_df = merged_df[
+                (merged_df["Which title would you like to nominate yourself for?"] == "Impact Award") &
+                (merged_df["BU Head Approval Status"] == "Approved")
+            ].copy()
+        winners_list = []
+    
+        if not award_df.empty:
+            for _, row in award_df.iterrows():
+                winners_list.append({
+                    "name": row["Employee Name"],
+                    "id": row["Employee ID"],
+                    "photo": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+                })
+
+        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=355)
+        st.markdown(box_html3, unsafe_allow_html=True)
+        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
+
         award_df = merged_df[
             ((merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") & (merged_df["BU Head Approval Status"] == "Approved")) |
                 (
@@ -886,22 +905,4 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=350)
         st.markdown(box_html2, unsafe_allow_html=True)
-        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
-        # Second row box (smaller)
-        award_df = merged_df[
-                (merged_df["Which title would you like to nominate yourself for?"] == "Impact Award") &
-                (merged_df["BU Head Approval Status"] == "Approved")
-            ].copy()
-        winners_list = []
-    
-        if not award_df.empty:
-            for _, row in award_df.iterrows():
-                winners_list.append({
-                    "name": row["Employee Name"],
-                    "id": row["Employee ID"],
-                    "photo": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-                })
-
-        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=355)
-        st.markdown(box_html3, unsafe_allow_html=True)
         st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
