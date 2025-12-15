@@ -734,7 +734,6 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 </div>
             </div>
             """
-    
         else:
             winners_html = ""
     
@@ -790,11 +789,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 </div>
             </div>
             """
-    
         return html
-
-
-
 
     col1, col2 = st.columns([4, 1])
        
