@@ -850,7 +850,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = row["Employee ID"]
+                emp_id = str(int(row["Employee ID"]))
                 photo_url = fetch_employee_url(emp_id)
                 
                 winners_list.append({
