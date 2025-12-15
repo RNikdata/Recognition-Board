@@ -606,7 +606,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         margin: 5px 0;
         ">
         <!-- Award Title -->
-        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
             🏆 {award_name}
         </div>
     
@@ -850,10 +850,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
             rising_stars = rising_stars_df["Employee Name"].tolist()
 
             # Generate HTML for box
-            award_color = AWARD_COLOR_MAP.get(names, "#CFA203")
-            box_html = get_box_html1(names, winner_name, winner_id, photo_url, rising_stars, width, height, award_color)
 
-            # box_html = get_box_html1(names, winner_name, winner_id, photo_url,rising_stars, width, height)
+            box_html = get_box_html1(names, winner_name, winner_id, photo_url,rising_stars, width, height)
             with cols[i % cols_per_row]:
                 st.markdown(box_html, unsafe_allow_html=True)
             
