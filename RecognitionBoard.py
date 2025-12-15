@@ -192,8 +192,8 @@ if st.session_state.get("active_page") == "Nomination Form":
             "title": 'Institution Building – "Foundation Builder" Award',
             "criteria": [
                 "Stewardship: Actively contributing to long-term organizational development, stability, or maturity.",
-                "Ownership: Taking charge of building processes, frameworks, or culture that strengthen the institution.",
-                "Sustainability: Creating structures or practices that continue delivering value beyond the individual."
+                "Ownership: Leading processes, frameworks, or culture to strengthen the institution.",
+                "Sustainability: Building practices that deliver lasting value beyond individuals."
             ]
         },
         {
