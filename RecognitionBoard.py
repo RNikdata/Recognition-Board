@@ -257,7 +257,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         df_display = merged_df.rename(columns={
             "Which title would you like to nominate yourself for?": "Nominated Title",
             "Please state your reasons for your self-nomination": "Self Nomination Reason",
-            "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months",
+            "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months"
         })
         # Function to color status
         def color_status(val):
@@ -345,7 +345,8 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
         # Rename columns for display
         df_display = merged_df.rename(columns={
             "Which title would you like to nominate yourself for?": "Nominated Title",
-            "Please state the reason for your self-nomination": "Self Nomination Reason"
+            "Please state your reasons for your self-nomination": "Self Nomination Reason",
+            "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months"
         })
 
         # Function to color status
