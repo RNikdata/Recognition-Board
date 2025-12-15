@@ -874,10 +874,13 @@ elif st.session_state.get("active_page") == "Final Display Board":
     
         if not award_df.empty:
             for _, row in award_df.iterrows():
+                emp_id = str(int(row["Employee ID"]))
+                photo_url = fetch_employee_url(emp_id)
+                
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
-                    "photo": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+                    "photo": photo_url
                 })
 
         box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=355)
