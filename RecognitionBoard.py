@@ -721,31 +721,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 # 🔧 added overflow:visible
                 winners_html += "<div style='position:relative; display:inline-block; margin-bottom:5px; overflow:visible;'>"
                 if w.get('photo', "") != "":
-                    winners_html += f"""
-                        <img src='{w['photo']}'
-                             style='width:80px; height:80px; border-radius:50%;
-                                    object-fit:cover; border:2px solid #fff;'>
-                    """
+                    winners_html += f"""<img src='{w['photo']}'style='width:80px; height:80px; border-radius:50%;object-fit:cover; border:2px solid #fff;'>"""
                 # 🔧 added z-index
                 if w.get("is_new"):
-                    winners_html += """
-                        <div style='
-                            position:absolute;
-                            top:-6px;
-                            right:-6px;
-                            z-index:10;
-                            background:#ff3b3b;
-                            color:#fff;
-                            font-size:10px;
-                            font-weight:bold;
-                            padding:2px 6px;
-                            border-radius:12px;
-                            box-shadow:0 2px 6px rgba(0,0,0,0.3);
-                        '>
-                            NEW
-                        </div>
-                    """
-            
+                    winners_html += """<div style='position:absolute;top:-6px;right:-6px;z-index:10;background:#ff3b3b;color:#fff;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.3);'>NEW</div>"""
                 winners_html += "</div>"
                 winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
