@@ -725,13 +725,17 @@ elif st.session_state.get("active_page") == "Final Display Board":
             else:
                 winners_html = ""
                 for w in winners:
-                    winners_html += """<div style='flex:0 0 auto;width:180px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;margin:5px;text-align:center;'>"""
-
+                    winners_html += """<div style='flex:0 0 auto;width:320px;display:flex;flex-direction:row;align-items:center;gap:10px;margin:5px;'>"""
+                    
+                    winners_html += "<div style='width:110px; display:flex; flex-direction:column; align-items:center; text-align:center;'>"
                     if w.get('photo', "") != "":
                         winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                     winners_html += f"<div style='font-size:12px;color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
                     winners_html += f"<div style='font-size:11px;  color:#888888;  text-align:center;'>{w['id']}</div>"
-                    winners_html += f"""<div style='font-size:12px; color:#cccccc; margin-top:4px; line-height:1.4; width:100%; word-wrap:break-word; overflow-wrap:break-word; white-space:normal;'>{w.get("comment", "")}</div>"""
+                    winners_html += "</div>"
+
+                    winners_html += f"""<div style='flex:1;font-size:12px;color:#cccccc;line-height:1.4; word-wrap:break-word; overflow-wrap:break-word; white-space:normal;'> {w.get("comment", "")}</div>"""
+
                     winners_html += "</div>"
         
                 html = f"""
