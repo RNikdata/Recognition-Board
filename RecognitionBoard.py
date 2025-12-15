@@ -864,9 +864,11 @@ elif st.session_state.get("active_page") == "Final Display Board":
         st.markdown(box_html0, unsafe_allow_html=True)
 
     with col2:
+    
         award_df = merged_df[
             (merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") &
-            (merged_df["BU Head Approval Status"] == "Approved")
+            (merged_df["BU Head Approval Status"] == "Approved") &
+            (merged_df["Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?"] == "Yes")
         ].copy()
     
         winners_list = []
