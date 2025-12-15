@@ -259,7 +259,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
             "Please state your reasons for your self-nomination": "Self Nomination Reason",
             "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months"
         })
-        df_display= df_display[df_display[Nominated Title] != "Special Mentions"]
+        df_display= df_display[df_display["Nominated Title"] != "Special Mentions"]
         # Function to color status
         def color_status(val):
             if val == "Approved":
