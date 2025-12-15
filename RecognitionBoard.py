@@ -486,16 +486,6 @@ elif st.session_state.get("active_page") == "Final Display Board":
         "Foundation Builder Award ",
         "Trailblazer Tactician Award"]
 
-    AWARD_COLOR_MAP = {
-        "Anchor of Trust Award": "#2E86C1",        # Blue
-        "Knowledge Catalyst Award": "#28B463",     # Green
-        "Efficiency Architect Award": "#AF7AC5",   # Purple
-        "Momentum Maker Award": "#E67E22",         # Orange
-        "Apex Innovator Award": "#E74C3C",          # Red
-        "Ripple Effect Award": "#1ABC9C",          # Teal
-        "Foundation Builder Award ": "#7D6608",    # Olive
-        "Trailblazer Tactician Award": "#884EA0"   # Indigo
-    }
     
     # Fixed box style
     box_style = """
@@ -580,7 +570,26 @@ elif st.session_state.get("active_page") == "Final Display Board":
     </div>
     """
     def get_box_html1(award_name, winner_name, winner_id, photo_url, rising_stars, width, height):
-        award_color = AWARD_COLOR_MAP.get(award_name, "#CFA203")
+        # Determine award color based on award name
+        if award_name == "Anchor of Trust Award":
+            award_color = "#2E86C1"   # Blue
+        elif award_name == "Knowledge Catalyst Award":
+            award_color = "#28B463"   # Green
+        elif award_name == "Efficiency Architect Award":
+            award_color = "#AF7AC5"   # Purple
+        elif award_name == "Momentum Maker Award":
+            award_color = "#E67E22"   # Orange
+        elif award_name == "Apex Innovator Award":
+            award_color = "#E74C3C"   # Red
+        elif award_name == "Ripple Effect Award":
+            award_color = "#1ABC9C"   # Teal
+        elif award_name == "Foundation Builder Award":
+            award_color = "#7D6608"   # Olive
+        elif award_name == "Trailblazer Tactician Award":
+            award_color = "#884EA0"   # Indigo
+        else:
+            award_color = "#CFA203"   # default gold
+            
         # Build Rising Stars HTML
         rising_html = ""
         if rising_stars:
@@ -606,7 +615,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         margin: 5px 0;
         ">
         <!-- Award Title -->
-        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+        <div style='font-weight:bold; font-size:18px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
             🏆 {award_name}
         </div>
     
