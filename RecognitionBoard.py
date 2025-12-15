@@ -104,7 +104,42 @@ st.markdown("---")
 #     """,
 #     unsafe_allow_html=True
 # )
+#######################################
+# --- API Authentication ---
+#######################################
+API_USERNAME = "streamlit_user"
+API_PASSWORD = "streamlitadmin@mu-sigma25"
+BASE_URL = "https://muerp.mu-sigma.com/dmsRest/getEmployeeImage"
 
+DEFAULT_IMAGE_URL = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+headers = {
+    "userid": API_USERNAME, 
+    "password": API_PASSWORD
+}
+
+@st.cache_data
+def fetch_employee_url(emp_id):
+    """
+    Fetch employee image from API and return a PIL Image object.
+    """
+    try:
+        response = requests.get(BASE_URL, headers=headers, params={"id": emp_id}, timeout=10)
+        print(f"Response status for {emp_id}: {response.status_code}")
+        if response.status_code == 200:
+            img = Image.open(BytesIO(response.content))
+
+        else:
+            # Fallback to default image from URL
+            response = requests.get(DEFAULT_IMAGE_URL)
+            img = Image.open(BytesIO(response.content))
+            
+        buffered = BytesIO()
+        img.save(buffered, format="PNG")
+        img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+        return f"data:image/png;base64,{img_base64}"
+    
+    except Exception as e:
+        return DEFAULT_IMAGE_URL
 
 # --- Tab 1: Nomination Form ---            
 if st.session_state.get("active_page") == "Nomination Form":
@@ -811,11 +846,14 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         if not award_df.empty:
             for _, row in award_df.iterrows():
+                emp_id = row["Employee ID"]
+                photo_url = fetch_employee_url(emp_id)
+                
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
                     "comment": row["BU Head Comment"],
-                    "photo": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+                    "photo": photo_url
                 })
 
         box_html0 = get_box_html_sm_multiple("Special Mentions", winners_list,height=220)
