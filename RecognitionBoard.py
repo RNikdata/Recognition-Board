@@ -703,7 +703,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
     def get_box_html_sm_multiple(award_name, winners, height):
         """
-        winners: list of dicts with keys 'name', 'id', 'photo'
+        winners: list of dicts with keys 'name', 'id', 'photo', 'comment'
         """
         # If winners list is empty, show "No Winners"
         if not winners:
@@ -716,7 +716,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
-                <!-- Winners section in 2 columns -->
+                <!-- Winners section -->
                 <div style='flex:1; display:flex; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
                     {winners_html}
                 </div>
@@ -725,14 +725,36 @@ elif st.session_state.get("active_page") == "Final Display Board":
         else:
             winners_html = ""
             for w in winners:
-                winners_html += "<div style='flex:0 0 auto;display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
+                # OUTER CONTAINER (row)
+                winners_html += """
+                <div style='
+                    flex:0 0 auto;
+                    display:flex;
+                    flex-direction:row;
+                    gap:15px;
+                    margin:5px;
+                    align-items:flex-start;
+                '>
+                """
+    
+                # LEFT BLOCK: image + name + id
+                winners_html += "<div style='display:flex; flex-direction:column; align-items:center;'>"
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px;color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px;  color:#888888;  text-align:center;'>{w['id']}</div>"
-                winners_html += f"""<div style='font-size:12px; color:#cccccc; text-align:center;max-width:200px; line-height:1.4; margin-top:4px;'>{w.get("comment", "")}</div>"""
                 winners_html += "</div>"
     
+                # RIGHT BLOCK: comment
+                winners_html += f"""
+                <div style='font-size:12px; color:#cccccc;
+                            max-width:300px; line-height:1.5;'>
+                    {w.get("comment", "")}
+                </div>
+                """
+    
+                winners_html += "</div>"
+        
             html = f"""
             <div style="width: 100%; height: {height}px; background: transparent;
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
@@ -741,8 +763,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
-                <!-- Winners section in 2 columns -->
-                <div style='flex:1; display:flex;flex-direction:row; gap:100px; justify-content:flex-start; align-items:center; overflow-x:auto; white-space:nowrap;'>
+                <!-- Winners section -->
+                <div style='flex:1; display:flex;flex-direction:row; gap:100px; justify-content:flex-start; align-items:flex-start; overflow-x:auto; white-space:nowrap;'>
                     {winners_html}
                 </div>
             </div>
