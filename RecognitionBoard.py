@@ -437,14 +437,14 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
 elif st.session_state.get("active_page") == "Final Display Board":
     
     award_list_col1 = [
-        "Award 1",
-        "Award 2",
         "Anchor of Trust Award",
         "Knowledge Catalyst Award",
         "Efficiency Architect Award",
         "Momentum Maker Award",
         "Apex Innovator Award",
-        "Ripple Effect Award"]
+        "Ripple Effect Award",
+        "Foundation Builder Award ",
+        "Trailblazer Tactician Award"]
     
     # Fixed box style
     box_style = """
