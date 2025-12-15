@@ -848,14 +848,12 @@ elif st.session_state.get("active_page") == "Final Display Board":
             for _, row in award_df.iterrows():
                 emp_id = row["Employee ID"]
                 photo_url = fetch_employee_url(emp_id)
-                html_img_tag = f'<img src="{photo_url}" style="width:110px; height:120px; border-radius:4px; object-fit:cover;">'
-
                 
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
                     "comment": row["BU Head Comment"],
-                    "photo": html_img_tag
+                    "photo": photo_url   # ✅ ONLY URL
                 })
 
         box_html0 = get_box_html_sm_multiple("Special Mentions", winners_list,height=220)
