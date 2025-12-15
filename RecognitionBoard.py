@@ -705,71 +705,94 @@ elif st.session_state.get("active_page") == "Final Display Board":
         """
         winners: list of dicts with keys 'name', 'id', 'photo', 'comment'
         """
+    
         # If winners list is empty, show "No Winners"
         if not winners:
-            winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px;  text-align:center; width:100%;height:100%;'>No Winners</div>"
+            winners_html = (
+                "<div style='display:flex; justify-content:center; align-items:center;"
+                " font-size:22px; text-align:center; width:100%; height:100%;'>"
+                "No Winners</div>"
+            )
+    
             html = f"""
             <div style="width: auto; height: {height}px; background: transparent;
-                        border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
+                        border-radius: 12px; padding: 10px; color: white;
+                        display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
+                
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px;
+                            background:#CFA203; color:#EBF4FD; padding:4px 8px;
+                            border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
+    
                 <!-- Winners section -->
-                <div style='flex:1; display:flex; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
+                <div style='flex:1; display:flex; gap:10px;
+                            justify-content:center; align-items:start; overflow-y:auto;'>
                     {winners_html}
                 </div>
             </div>
             """
+    
         else:
             winners_html = ""
+    
             for w in winners:
-                # OUTER CONTAINER (row)
                 winners_html += """
-                <div style='
-                    flex:0 0 auto;
-                    display:flex;
-                    flex-direction:row;
-                    gap:15px;
-                    margin:5px;
-                    align-items:flex-start;
-                '>
+                <div style='flex:0 0 auto; display:flex; flex-direction:column;
+                            align-items:center; justify-content:center; margin:5px;'>
                 """
     
-                # LEFT BLOCK: image + name + id
-                winners_html += "<div style='display:flex; flex-direction:column; align-items:center;'>"
                 if w.get('photo', "") != "":
-                    winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
-                winners_html += f"<div style='font-size:12px;color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
-                winners_html += f"<div style='font-size:11px;  color:#888888;  text-align:center;'>{w['id']}</div>"
-                winners_html += "</div>"
+                    winners_html += f"""
+                    <img src='{w['photo']}'
+                         style='width:80px; height:80px; border-radius:50%;
+                                object-fit:cover; border:2px solid #fff;
+                                margin-bottom:5px;'>
+                    """
     
-                # RIGHT BLOCK: comment
                 winners_html += f"""
-                <div style='font-size:12px; color:#cccccc;
-                            max-width:300px; line-height:1.5;'>
-                    {w.get("comment", "")}
+                    <div style='font-size:12px; color:#888888;
+                                font-weight:bold; text-align:center;'>
+                        {w['name']}
+                    </div>
+                    <div style='font-size:11px; color:#888888; text-align:center;'>
+                        {w['id']}
+                    </div>
+    
+                    <!-- Comment -->
+                    <div style='font-size:12px; color:#cccccc; text-align:center;
+                                max-width:200px; line-height:1.4; margin-top:4px;'>
+                        {w.get("comment", "")}
+                    </div>
                 </div>
                 """
     
-                winners_html += "</div>"
-        
             html = f"""
             <div style="width: 100%; height: {height}px; background: transparent;
-                        border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
+                        border-radius: 12px; padding: 10px; color: white;
+                        display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
+    
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px;
+                            background:#CFA203; color:#EBF4FD; padding:4px 8px;
+                            border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
+    
                 <!-- Winners section -->
-                <div style='flex:1; display:flex;flex-direction:row; gap:100px; justify-content:flex-start; align-items:flex-start; overflow-x:auto; white-space:nowrap;'>
+                <div style='flex:1; display:flex; flex-direction:row; gap:100px;
+                            justify-content:flex-start; align-items:center;
+                            overflow-x:auto; white-space:nowrap;'>
                     {winners_html}
                 </div>
             </div>
             """
+    
         return html
+
 
 
 
