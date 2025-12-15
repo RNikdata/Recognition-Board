@@ -224,6 +224,7 @@ color:white;'>
             col1.markdown(html_content, unsafe_allow_html=True)
         else:
             col2.markdown(html_content, unsafe_allow_html=True)
+    st.dataframe(merged_df)
 
 elif st.session_state.get("active_page") == "AL Selection Board":
     # --- Sidebar Filters ---
@@ -255,7 +256,8 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         # Rename columns for display
         df_display = merged_df.rename(columns={
             "Which title would you like to nominate yourself for?": "Nominated Title",
-            "Please state the reason for your self-nomination": "Self Nomination Reason"
+            "Please state the reason for your self-nomination": "Self Nomination Reason",
+            "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months",
         })
     
         # Function to color status
