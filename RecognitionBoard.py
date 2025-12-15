@@ -866,11 +866,17 @@ elif st.session_state.get("active_page") == "Final Display Board":
     with col2:
     
         award_df = merged_df[
-            ((merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") &
-            (merged_df["BU Head Approval Status"] == "Approved") |)
-            (merged_df["Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?"] == "Yes")
+            (merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") &
+            (
+                (merged_df["BU Head Approval Status"] == "Approved") |
+                (
+                    merged_df["Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?"]
+                    .str.strip()
+                    .str.upper() == "YES"
+                )
+            )
         ].copy()
-    
+        
         winners_list = []
     
         if not award_df.empty:
