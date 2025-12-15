@@ -145,8 +145,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Consistency: Delivering high-quality work on time, every time.",
                 "Dependability: Being a go-to person on the team for critical tasks.",
-                "Quality: Maintaining a high standard of accuracy and completeness in all outputs.",
-                "Others: Please mention."
+                "Quality: Maintaining a high standard of accuracy and completeness in all outputs."
             ]
         },
         {
@@ -154,8 +153,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Initiative: Proactively seeking new skills or knowledge.",
                 "Application: Applying new learnings to a project or task.",
-                "Knowledge Sharing: Actively helping others learn and grow.",
-                "Others: Please mention."
+                "Knowledge Sharing: Actively helping others learn and grow."
             ]
         },
         {
@@ -163,8 +161,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Optimization: Finding innovative ways to save time, money, or effort.",
                 "Planning: Demonstrating excellent foresight in resource allocation.",
-                "Problem-Solving: Creatively overcoming resourcing challenges.",
-                "Others: Please mention."
+                "Problem-Solving: Creatively overcoming resourcing challenges."
             ]
         },
         {
@@ -172,8 +169,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Contribution: Directly impacting a project or business unit's growth.",
                 "Scalability: Building solutions or processes that can grow with the company.",
-                "Proactivity: Identifying and pursuing new opportunities.",
-                "Others: Please mention."
+                "Proactivity: Identifying and pursuing new opportunities."
             ]
         },
         {
@@ -181,8 +177,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Vision: Introducing a completely new idea, tool, or methodology.",
                 "Impact: Leading to a significant breakthrough or change.",
-                "Excellence: Work that stands out as a top-tier example of problem-solving.",
-                "Others: Please mention."
+                "Excellence: Work that stands out as a top-tier example of problem-solving."
             ]
         },
         {
@@ -190,8 +185,23 @@ if st.session_state.get("active_page") == "Nomination Form":
             "criteria": [
                 "Significance: Creating substantial positive outcomes for clients, projects, or teams.",
                 "Influence: Inspiring or influencing others to improve their work.",
-                "Tangible Results: Measurable impact through data or feedback.",
-                "Others: Please mention."
+                "Tangible Results: Measurable impact through data or feedback."
+            ]
+        },
+        {
+            "title": 'Institution Building – "Foundation Builder" Award',
+            "criteria": [
+                "Stewardship: Actively contributing to long-term organizational development, stability, or maturity.",
+                "Ownership: Taking charge of building processes, frameworks, or culture that strengthen the institution.",
+                "Sustainability: Creating structures or practices that continue delivering value beyond the individual."
+            ]
+        },
+        {
+            "title": 'Above & Beyond – "Trailblazer Tactician" Award',
+            "criteria": [
+                "Resourcefulness: Using smart, creative, or unconventional hacks to achieve results faster and more effectively.",
+                "Tenacity: Going the extra mile with relentless effort to overcome challenges and deliver outcomes.",
+                "Impact: Driving breakthrough results through innovative shortcuts or extreme positive measures."
             ]
         }
     ]
