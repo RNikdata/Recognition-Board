@@ -700,10 +700,9 @@ elif st.session_state.get("active_page") == "Final Display Board":
             </div>
             """
         return html
-
     def get_box_html_sm_multiple(award_name, winners, height):
         """
-        winners: list of dicts with keys 'name', 'id', 'photo', 'comment'
+        winners: list of dicts with keys 'name', 'id', 'photo'
         """
     
         # If winners list is empty, show "No Winners"
@@ -719,7 +718,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white;
                         display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
-                
+    
                 <!-- Award Name -->
                 <div style='font-weight:bold; font-size:20px; margin-bottom:10px;
                             background:#CFA203; color:#EBF4FD; padding:4px 8px;
@@ -759,12 +758,6 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     <div style='font-size:11px; color:#888888; text-align:center;'>
                         {w['id']}
                     </div>
-    
-                    <!-- Comment -->
-                    <div style='font-size:12px; color:#cccccc; text-align:center;
-                                max-width:200px; line-height:1.4; margin-top:4px;'>
-                        {w.get("comment", "")}
-                    </div>
                 </div>
                 """
     
@@ -789,7 +782,9 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 </div>
             </div>
             """
+    
         return html
+
 
     col1, col2 = st.columns([4, 1])
        
