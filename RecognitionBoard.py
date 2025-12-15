@@ -199,7 +199,7 @@ if st.session_state.get("active_page") == "Nomination Form":
         {
             "title": 'Above & Beyond – "Trailblazer Tactician" Award',
             "criteria": [
-                "Resourcefulness: Using smart, creative, or unconventional hacks to achieve results faster and more effectively.",
+                "Resourcefulness: Using smart, creative, or unconventional hacks to achieve results faster and effectively.",
                 "Tenacity: Going the extra mile with relentless effort to overcome challenges and deliver outcomes.",
                 "Impact: Driving breakthrough results through innovative shortcuts or extreme positive measures."
             ]
