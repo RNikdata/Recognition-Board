@@ -721,11 +721,11 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 # 🔧 added overflow:visible
                 winners_html += "<div style='position:relative; display:inline-block; margin-bottom:5px; overflow:visible;'>"
                 if w.get('photo', "") != "":
-                winners_html += f"""
-                    <img src='{w['photo']}'
-                         style='width:80px; height:80px; border-radius:50%;
-                                object-fit:cover; border:2px solid #fff;'>
-                """
+                    winners_html += f"""
+                        <img src='{w['photo']}'
+                             style='width:80px; height:80px; border-radius:50%;
+                                    object-fit:cover; border:2px solid #fff;'>
+                    """
                 # 🔧 added z-index
                 if w.get("is_new"):
                     winners_html += """
