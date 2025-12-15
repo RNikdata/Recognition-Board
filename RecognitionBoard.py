@@ -693,7 +693,6 @@ elif st.session_state.get("active_page") == "Final Display Board":
             """
         return html
 
-
     def get_box_html_spot_multiple(award_name, winners, width, height):
         """
         winners: list of dicts with keys 'name', 'id', 'photo'
@@ -719,24 +718,22 @@ elif st.session_state.get("active_page") == "Final Display Board":
             winners_html = ""
             for w in winners:
                 winners_html += "<div style='display:flex; flex-direction:column; align-items:center; justify-content:center; margin:5px;'>"
-            
-                # Image wrapper (relative for floating badge)
-                winners_html += "<div style='position:relative; display:inline-block; margin-bottom:5px;'>"
-            
+                # 🔧 added overflow:visible
+                winners_html += "<div style='position:relative; display:inline-block; margin-bottom:5px; overflow:visible;'>"
                 if w.get('photo', "") != "":
-                    winners_html += f"""
-                        <img src='{w['photo']}'
-                             style='width:80px; height:80px; border-radius:50%;
-                                    object-fit:cover; border:2px solid #fff;'>
-                    """
-            
-                # Floating NEW badge
+                winners_html += f"""
+                    <img src='{w['photo']}'
+                         style='width:80px; height:80px; border-radius:50%;
+                                object-fit:cover; border:2px solid #fff;'>
+                """
+                # 🔧 added z-index
                 if w.get("is_new"):
                     winners_html += """
                         <div style='
                             position:absolute;
                             top:-6px;
                             right:-6px;
+                            z-index:10;
                             background:#ff3b3b;
                             color:#fff;
                             font-size:10px;
@@ -749,8 +746,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         </div>
                     """
             
-                winners_html += "</div>"  # end image wrapper
-            
+                winners_html += "</div>"
                 winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
