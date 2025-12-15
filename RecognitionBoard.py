@@ -224,7 +224,7 @@ color:white;'>
             col1.markdown(html_content, unsafe_allow_html=True)
         else:
             col2.markdown(html_content, unsafe_allow_html=True)
-    st.dataframe(merged_df)
+    
 
 elif st.session_state.get("active_page") == "AL Selection Board":
     # --- Sidebar Filters ---
@@ -251,6 +251,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         ]
     
     st.subheader("AL Selection Board")
+    st.dataframe(merged_df)
     
     try:
         # Rename columns for display
