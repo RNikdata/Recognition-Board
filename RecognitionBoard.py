@@ -983,7 +983,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     winner_id = "00000"
                     photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
 
-            rising_stars_df = award_df[(award_df["BU Head Rank"] = "Rising Star")]
+            rising_stars_df = award_df[(award_df["BU Head Rank"] == "Rising Star")]
             rising_stars = rising_stars_df["Employee Name"].tolist()
 
             # Generate HTML for box
