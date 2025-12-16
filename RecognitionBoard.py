@@ -277,6 +277,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
     account_filter = st.sidebar.multiselect("Account Name", options=df1["Account Name"].dropna().unique())
     manager_filter = st.sidebar.multiselect("Manager Name", options=df1["Manager Name"].dropna().unique())
     designation_filter = st.sidebar.multiselect("Designation", options=df1["Designation"].dropna().unique())
+    award_filter = st.sidebar.multiselect("Nominated Title", options=df["Which title would you like to nominate yourself for?"].dropna().unique())
     st.sidebar.markdown("<br><br>",unsafe_allow_html = True)
     st.sidebar.header("🔎 Search")
     resource_search = st.sidebar.text_input("Search Employee Name or ID",placeholder = "Employe ID/Name")
@@ -287,6 +288,8 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         merged_df = merged_df[merged_df["Manager Name"].isin(manager_filter)]
     if designation_filter:
         merged_df = merged_df[merged_df["Designation"].isin(designation_filter)]
+    if award_filter:
+        merged_df = merged_df[merged_df["Which title would you like to nominate yourself for?"].isin(award_filter)]
     if resource_search:
         merged_df = merged_df[
             merged_df["Employee Name"].str.contains(resource_search, case=False, na=False) |
