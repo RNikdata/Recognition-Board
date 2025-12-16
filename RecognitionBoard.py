@@ -630,7 +630,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         <div style="font-size:14px;">Winner Name</div>
     </div>
     """
-    def get_box_html1(award_name, winner_name, winner_id, photo_url, rising_stars, width, height):
+    def get_box_html1(award_name, winner_name, winner_id, winner_account, photo_url, rising_stars, width, height):
         # Determine award color based on award name
         if award_name == "Anchor of Trust Award":
             award_color = "#0047FF"   # Electric Blue
@@ -694,6 +694,9 @@ elif st.session_state.get("active_page") == "Final Display Board":
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
             <div style='font-size:14px; font-weight:bold; color:#888888;'>{winner_name}</div>
+            if w.get("winner_account"):
+                    winners_html += """<div style='position:absolute;top:-6px;right:-6px;z-index:10;background:#ff3b3b;color:#fff;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.3);'>{winner_account}</div>"""
+                winners_html += "</div>"
             <div style='font-size:14px;  color:#888888;'>{winner_id}</div>
         </div>
     
@@ -995,6 +998,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     w = winner.iloc[0]
                     winner_name = w["Employee Name"]
                     winner_id = w["Employee ID"]
+                    winner_account = w["Account"]
                     photo_url = fetch_employee_url(winner_id)
                 else:
                     winner_name = "No Winner"
@@ -1006,7 +1010,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
             # Generate HTML for box
 
-            box_html = get_box_html1(names, winner_name, winner_id, photo_url,rising_stars, width, height)
+            box_html = get_box_html1(names, winner_name, winner_id, winner_account, photo_url,rising_stars, width, height)
             with cols[i % cols_per_row]:
                 st.markdown(box_html, unsafe_allow_html=True)
             
