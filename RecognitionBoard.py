@@ -584,7 +584,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Ripple Effect Award":
             award_color = "#00C853"   # Turquoise Cyan
         elif award_name == "Foundation Builder Award":
-            award_color = "#1A237E"   # Vibrant Amber
+            award_color = "#FFB300"   # Vibrant Amber
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
@@ -691,7 +691,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Ripple Effect Award":
             award_color = "#00C853"   # Turquoise Cyan
         elif award_name == "Foundation Builder Award":
-            award_color = "#1A237E"   # Vibrant Amber
+            award_color = "#FFB300"   # Vibrant Amber
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
@@ -765,7 +765,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Ripple Effect Award":
             award_color = "#00C853"   # Turquoise Cyan
         elif award_name == "Foundation Builder Award":
-            award_color = "#1A237E"   # Vibrant Amber
+            award_color = "#FFB300"   # Vibrant Amber
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
@@ -844,7 +844,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             elif award_name == "Ripple Effect Award":
                 award_color = "#00C853"   # Turquoise Cyan
             elif award_name == "Foundation Builder Award":
-                award_color = "#1A237E"   # Vibrant Amber
+                award_color = "#FFB300"   # Vibrant Amber
             elif award_name == "Trailblazer Tactician Award":
                 award_color = "#FF1744"   # Hot Crimson
             elif award_name == "Impact Award":
