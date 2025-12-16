@@ -572,23 +572,29 @@ elif st.session_state.get("active_page") == "Final Display Board":
     def get_box_html1(award_name, winner_name, winner_id, photo_url, rising_stars, width, height):
         # Determine award color based on award name
         if award_name == "Anchor of Trust Award":
-            award_color = "#2E86C1"   # Blue
+            award_color = "#0047FF"   # Electric Blue
         elif award_name == "Knowledge Catalyst Award":
-            award_color = "#28B463"   # Green
+            award_color = "#9C27B0"   # Neon Purple
         elif award_name == "Efficiency Architect Award":
-            award_color = "#AF7AC5"   # Purple
+            award_color = "#00BFA5"   # Bright Teal
         elif award_name == "Momentum Maker Award":
-            award_color = "#E67E22"   # Orange
+            award_color = "#FF6D00"   # Vivid Orange
         elif award_name == "Apex Innovator Award":
-            award_color = "#E74C3C"   # Red
+            award_color = "#2962FF"   # Electric Blue
         elif award_name == "Ripple Effect Award":
-            award_color = "#1ABC9C"   # Teal
+            award_color = "#00E5FF"   # Turquoise Cyan
         elif award_name == "Foundation Builder Award":
-            award_color = "#7D6608"   # Olive
+            award_color = "#FFB300"   # Vibrant Amber
         elif award_name == "Trailblazer Tactician Award":
-            award_color = "#884EA0"   # Indigo
+            award_color = "#FF1744"   # Hot Crimson
+        elif award_name == "Impact Award":
+            award_color = "#FFD600"   # Metallic Gold
+        elif award_name == "SPOT Award":
+            award_color = "#00E676"   # Neon Green
+        elif award_name == "Special Mentions":
+            award_color = "#E91E63"   # Vibrant Pink
         else:
-            award_color = "#CFA203"   # default gold
+            award_color = "#FFD600"   # Default Gold
             
         # Build Rising Stars HTML
         rising_html = ""
