@@ -673,7 +673,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
             <div style='font-size:12px;'>{winner_id}</div>
         </div>
         """
-    def get_box_html_impact_multiple(award_name, winners, width, height):
+    def get_box_html_impact_multiple(award_name, winners, width, height):  
+        """
+        winners: list of dicts with keys 'name', 'id', 'photo'
+        """
         # Determine award color based on award name
         if award_name == "Anchor of Trust Award":
             award_color = "#0047FF"   # Electric Blue
@@ -699,9 +702,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#E91E63"   # Vibrant Pink
         else:
             award_color = "#FFD600"   # Default Gold
-        """
-        winners: list of dicts with keys 'name', 'id', 'photo'
-        """
+        
         # If winners list is empty, show "No Winners"
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
@@ -746,6 +747,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
         return html
 
     def get_box_html_spot_multiple(award_name, winners, width, height):
+            
+        """
+        winners: list of dicts with keys 'name', 'id', 'photo'
+        """
         # Determine award color based on award name
         if award_name == "Anchor of Trust Award":
             award_color = "#0047FF"   # Electric Blue
@@ -771,10 +776,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#E91E63"   # Vibrant Pink
         else:
             award_color = "#FFD600"   # Default Gold
-            
-        """
-        winners: list of dicts with keys 'name', 'id', 'photo'
-        """
+        
         # If winners list is empty, show "No Winners"
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
@@ -824,7 +826,10 @@ elif st.session_state.get("active_page") == "Final Display Board":
             """
         return html
         
-    def get_box_html_sm_multiple(award_name, winners, height):
+    def get_box_html_sm_multiple(award_name, winners, height):    
+            """
+            winners: list of dicts with keys 'name', 'id', 'photo'
+            """
             # Determine award color based on award name
             if award_name == "Anchor of Trust Award":
                 award_color = "#0047FF"   # Electric Blue
@@ -850,10 +855,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 award_color = "#E91E63"   # Vibrant Pink
             else:
                 award_color = "#FFD600"   # Default Gold
-                
-            """
-            winners: list of dicts with keys 'name', 'id', 'photo'
-            """
+            
             # If winners list is empty, show "No Winners"
             if not winners:
                 winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px;  text-align:center; width:100%;height:100%;'>No Winners</div>"
