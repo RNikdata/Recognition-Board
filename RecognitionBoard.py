@@ -674,6 +674,31 @@ elif st.session_state.get("active_page") == "Final Display Board":
         </div>
         """
     def get_box_html_impact_multiple(award_name, winners, width, height):
+        # Determine award color based on award name
+        if award_name == "Anchor of Trust Award":
+            award_color = "#0047FF"   # Electric Blue
+        elif award_name == "Knowledge Catalyst Award":
+            award_color = "#9C27B0"   # Neon Purple
+        elif award_name == "Efficiency Architect Award":
+            award_color = "#00BFA5"   # Bright Teal
+        elif award_name == "Momentum Maker Award":
+            award_color = "#FF6D00"   # Vivid Orange
+        elif award_name == "Apex Innovator Award":
+            award_color = "#D500F9"   # Electric Blue
+        elif award_name == "Ripple Effect Award":
+            award_color = "#00C853"   # Turquoise Cyan
+        elif award_name == "Foundation Builder Award":
+            award_color = "#FFB300"   # Vibrant Amber
+        elif award_name == "Trailblazer Tactician Award":
+            award_color = "#FF1744"   # Hot Crimson
+        elif award_name == "Impact Award":
+            award_color = "#FFD600"   # Metallic Gold
+        elif award_name == "SPOT Award":
+            award_color = "#00E676"   # Neon Green
+        elif award_name == "Special Mentions":
+            award_color = "#E91E63"   # Vibrant Pink
+        else:
+            award_color = "#FFD600"   # Default Gold
         """
         winners: list of dicts with keys 'name', 'id', 'photo'
         """
@@ -685,7 +710,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -709,7 +734,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -721,6 +746,32 @@ elif st.session_state.get("active_page") == "Final Display Board":
         return html
 
     def get_box_html_spot_multiple(award_name, winners, width, height):
+        # Determine award color based on award name
+        if award_name == "Anchor of Trust Award":
+            award_color = "#0047FF"   # Electric Blue
+        elif award_name == "Knowledge Catalyst Award":
+            award_color = "#9C27B0"   # Neon Purple
+        elif award_name == "Efficiency Architect Award":
+            award_color = "#00BFA5"   # Bright Teal
+        elif award_name == "Momentum Maker Award":
+            award_color = "#FF6D00"   # Vivid Orange
+        elif award_name == "Apex Innovator Award":
+            award_color = "#D500F9"   # Electric Blue
+        elif award_name == "Ripple Effect Award":
+            award_color = "#00C853"   # Turquoise Cyan
+        elif award_name == "Foundation Builder Award":
+            award_color = "#FFB300"   # Vibrant Amber
+        elif award_name == "Trailblazer Tactician Award":
+            award_color = "#FF1744"   # Hot Crimson
+        elif award_name == "Impact Award":
+            award_color = "#FFD600"   # Metallic Gold
+        elif award_name == "SPOT Award":
+            award_color = "#00E676"   # Neon Green
+        elif award_name == "Special Mentions":
+            award_color = "#E91E63"   # Vibrant Pink
+        else:
+            award_color = "#FFD600"   # Default Gold
+            
         """
         winners: list of dicts with keys 'name', 'id', 'photo'
         """
@@ -732,7 +783,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -762,7 +813,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
@@ -774,6 +825,32 @@ elif st.session_state.get("active_page") == "Final Display Board":
         return html
         
     def get_box_html_sm_multiple(award_name, winners, height):
+            # Determine award color based on award name
+            if award_name == "Anchor of Trust Award":
+                award_color = "#0047FF"   # Electric Blue
+            elif award_name == "Knowledge Catalyst Award":
+                award_color = "#9C27B0"   # Neon Purple
+            elif award_name == "Efficiency Architect Award":
+                award_color = "#00BFA5"   # Bright Teal
+            elif award_name == "Momentum Maker Award":
+                award_color = "#FF6D00"   # Vivid Orange
+            elif award_name == "Apex Innovator Award":
+                award_color = "#D500F9"   # Electric Blue
+            elif award_name == "Ripple Effect Award":
+                award_color = "#00C853"   # Turquoise Cyan
+            elif award_name == "Foundation Builder Award":
+                award_color = "#FFB300"   # Vibrant Amber
+            elif award_name == "Trailblazer Tactician Award":
+                award_color = "#FF1744"   # Hot Crimson
+            elif award_name == "Impact Award":
+                award_color = "#FFD600"   # Metallic Gold
+            elif award_name == "SPOT Award":
+                award_color = "#00E676"   # Neon Green
+            elif award_name == "Special Mentions":
+                award_color = "#E91E63"   # Vibrant Pink
+            else:
+                award_color = "#FFD600"   # Default Gold
+                
             """
             winners: list of dicts with keys 'name', 'id', 'photo'
             """
@@ -785,7 +862,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                             border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                             box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                     <!-- Award Name -->
-                    <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                    <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                         🏆 {award_name}
                     </div>
                     <!-- Winners section in 2 columns -->
@@ -815,7 +892,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                             border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                             box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                     <!-- Award Name -->
-                    <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:#CFA203; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
+                    <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
                         🏆 {award_name}
                     </div>
                     <!-- Winners section in 2 columns -->
