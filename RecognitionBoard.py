@@ -483,9 +483,21 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
         
                 # Save comment
                 merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Comment"] = bu_comment
-        
+
+                if rank_choice == "Winner":
+                    bu_rank_value = 1
+                elif rank_choice == "Rising Star":
+                    bu_rank_value = 2
+                else:  # None
+                    bu_rank_value = np.nan
+                
+                merged_df.loc[
+                    merged_df["Nomination ID"] == selected_id,
+                    "BU Head Rank"
+                ] = bu_rank_value
+                
                 # Save Rank
-                merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = (int(bu_rank) if bu_rank.isdigit() else np.nan )
+                #merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = (int(bu_rank) if bu_rank.isdigit() else np.nan )
 
                 columns_to_keep = [
                     "Nomination ID",
@@ -972,7 +984,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winner_id = "00000"
                 photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
             else:
-                winner = award_df[award_df["BU Head Rank"] == "Winner"]
+                winner = award_df[award_df["BU Head Rank"] == 1]
                 if not winner.empty:
                     w = winner.iloc[0]
                     winner_name = w["Employee Name"]
@@ -983,7 +995,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     winner_id = "00000"
                     photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
 
-            rising_stars_df = award_df[(award_df["BU Head Rank"] == "Rising Star")]
+            rising_stars_df = award_df[(award_df["BU Head Rank"] == 2)]
             rising_stars = rising_stars_df["Employee Name"].tolist()
 
             # Generate HTML for box
