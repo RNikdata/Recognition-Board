@@ -347,6 +347,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         
             # Save back to Excel (only original df columns + new comment column)
             cols_to_save = df.columns.tolist()
+            
             set_with_dataframe(nomination_sheet, merged_df)
 
             # Clear the text area after submission
@@ -1018,6 +1019,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     .str.upper() == "YES"
                 )
         ].copy()
+
+        award_df = award_df.drop_duplicates(subset=["Employee ID"])
         
         winners_list = []
         
