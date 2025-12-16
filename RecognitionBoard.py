@@ -982,7 +982,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 (merged_df["Which title would you like to nominate yourself for?"] == names) &
                 (merged_df["BU Head Approval Status"] == "Approved")
             ].copy()
-            st.dataframe(award_df)
+            
             width = 290
             height = 230
 
@@ -997,7 +997,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     w = winner.iloc[0]
                     winner_name = w["Employee Name"]
                     winner_id = w["Employee ID"]
-                    winner_account = w["Account"]
+                    winner_account = w["Account Name"]
                     photo_url = fetch_employee_url(winner_id)
                 else:
                     winner_name = "No Winner"
