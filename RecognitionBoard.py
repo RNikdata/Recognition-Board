@@ -455,9 +455,9 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
                 selected_id = st.selectbox("Select Nomination ID to Approve/Reject:", nomination_ids)
         
             with col2:
-                bu_rank = st.text_input(
-                    "Rank:", 
-                    placeholder="Enter Rank", 
+                rank_choice = st.selectbox(
+                    "Rank:",
+                    options=["Winner", "Rising Star", "None"],
                     key="bu_rank_input"
                 )
         
@@ -486,9 +486,25 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
         
                 # Save Rank
                 merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = (int(bu_rank) if bu_rank.isdigit() else np.nan )
-        
-                # Save only original df columns
-                set_with_dataframe(nomination_sheet, merged_df)
+
+                columns_to_keep = [
+                    "Nomination ID",
+                    "Employee ID",
+                    "Account",
+                    "Which title would you like to nominate yourself for?",
+                    "Please state your reasons for your self-nomination",
+                    "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?",
+                    "AL Approval Status",
+                    "AL Comment",
+                    "BU Head Approval Status",
+                    "BU Head Comment",
+                    "BU Head Rank"
+                ]
+    
+                filtered_df = merged_df[columns_to_keep]
+                
+                set_with_dataframe(nomination_sheet, filtered_df)
+                
         
                 st.success(f"Nomination ID {selected_id} has been {approval_choice}d successfully!")
                 time.sleep(2)
@@ -956,7 +972,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winner_id = "00000"
                 photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
             else:
-                winner = award_df[award_df["BU Head Rank"] == 1]
+                winner = award_df[award_df["BU Head Rank"] == "Winner"]
                 if not winner.empty:
                     w = winner.iloc[0]
                     winner_name = w["Employee Name"]
@@ -967,7 +983,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     winner_id = "00000"
                     photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
 
-            rising_stars_df = award_df[(award_df["BU Head Rank"] > 1) & (award_df["BU Head Rank"] <= 5)]
+            rising_stars_df = award_df[(award_df["BU Head Rank"] = "Rising Star")]
             rising_stars = rising_stars_df["Employee Name"].tolist()
 
             # Generate HTML for box
