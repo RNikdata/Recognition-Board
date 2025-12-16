@@ -647,7 +647,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
-            award_color = "#2B2B2B"   # Vibrant Pink
+            award_color = "#3A3A3A"   # Vibrant Pink
         else:
             award_color = "#FFD600"   # Default Gold
             
@@ -754,7 +754,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
-            award_color = "#2B2B2B"   # Vibrant Pink
+            award_color = "#3A3A3A"   # Vibrant Pink
         else:
             award_color = "#FFD600"   # Default Gold
         
@@ -828,7 +828,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
-            award_color = "#2B2B2B"   # Vibrant Pink
+            award_color = "#3A3A3A"   # Vibrant Pink
         else:
             award_color = "#FFD600"   # Default Gold
         
@@ -907,7 +907,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             elif award_name == "Spot Award":
                 award_color = "#00E676"   # Neon Green
             elif award_name == "Special Mentions":
-                award_color = "#2B2B2B"   # Vibrant Pink
+                award_color = "#3A3A3A"   # Vibrant Pink
             else:
                 award_color = "#FFD600"   # Default Gold
             
