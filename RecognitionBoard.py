@@ -945,7 +945,12 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     w = winner.iloc[0]
                     winner_name = w["Employee Name"]
                     winner_id = w["Employee ID"]
-                    emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                    #emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                    emp_id = (
+                        str(int(float(row["Employee ID"])))
+                        if pd.notna(row["Employee ID"]) and str(row["Employee ID"]).strip().replace(".", "").isdigit()
+                        else ""
+                    )
                     photo_url = fetch_employee_url(emp_id)
                 else:
                     winner_name = "No Winner"
