@@ -991,6 +991,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             if award_df.empty:
                 winner_name = "No Winner"
                 winner_id = "00000"
+                winner_account = ""
                 photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
             else:
                 winner = award_df[award_df["BU Head Rank"] == 1]
@@ -1003,6 +1004,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 else:
                     winner_name = "No Winner"
                     winner_id = "00000"
+                    winner_account = ""
                     photo_url = "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
 
             rising_stars_df = award_df[(award_df["BU Head Rank"] == 2)]
