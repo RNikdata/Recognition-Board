@@ -44,7 +44,11 @@ try:
 
     # --- Merge nomination data with employee data ---
     merged_df = df.merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
-    merged_df["Employee ID"] = merged_df["Employee Id"].astype(int)
+    merged_df["Employee ID"] = (
+        pd.to_numeric(merged_df["Employee Id"], errors="coerce")
+        .fillna(0)
+        .astype(int)
+    )
 
     # --- Ensure approval status columns exist ---
     if "AL Approval Status" not in merged_df.columns:
@@ -402,7 +406,13 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
         # Filter to show only nominations approved by AL
         df_display_filtered = df_display[df_display["AL Approval Status"] == "Approved"]
         # Ensure Rank is integer for display
-        df_display_filtered["BU Head Rank"] = df_display["BU Head Rank"].astype("Int64")
+        # df_display_filtered["BU Head Rank"] = df_display["BU Head Rank"].astype("Int64")
+        if "BU Head Rank" in df_display.columns:
+            df_display_filtered["BU Head Rank"] = (
+                pd.to_numeric(df_display["BU Head Rank"], errors="coerce")
+                .astype("Int64")
+            )
+
         # Show styled table
         st.dataframe(
             df_display_filtered[["Nomination ID", "Employee ID", "Employee Name","Manager Name", "Designation", "Account Name", "Rank", "Nominated Title", "Self Nomination Reason", "AL Approval Status", "AL Comment", "BU Head Approval Status", "BU Head Comment","BU Head Rank"]]
@@ -458,7 +468,7 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
                 merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Comment"] = bu_comment
         
                 # Save Rank
-                merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = bu_rank
+                merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = (int(bu_rank) if bu_rank.isdigit() else np.nan )
         
                 # Save only original df columns
                 set_with_dataframe(nomination_sheet, merged_df)
@@ -963,7 +973,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"]))
+                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
                 
                 winners_list.append({
@@ -987,7 +997,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"]))
+                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
                 
                 winners_list.append({
@@ -1013,7 +1023,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"]))
+                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
         
                 is_new = row["Which title would you like to nominate yourself for?"] == "Spot Award"
