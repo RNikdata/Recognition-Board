@@ -580,9 +580,9 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Momentum Maker Award":
             award_color = "#FF6D00"   # Vivid Orange
         elif award_name == "Apex Innovator Award":
-            award_color = "#2962FF"   # Electric Blue
+            award_color = "#D500F9"   # Electric Blue
         elif award_name == "Ripple Effect Award":
-            award_color = "#00E5FF"   # Turquoise Cyan
+            award_color = "#00C853"   # Turquoise Cyan
         elif award_name == "Foundation Builder Award":
             award_color = "#FFB300"   # Vibrant Amber
         elif award_name == "Trailblazer Tactician Award":
