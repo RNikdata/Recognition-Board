@@ -589,7 +589,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
             award_color = "#FFD600"   # Metallic Gold
-        elif award_name == "SPOT Award":
+        elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#E91E63"   # Vibrant Pink
@@ -696,7 +696,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
             award_color = "#FFD600"   # Metallic Gold
-        elif award_name == "SPOT Award":
+        elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#E91E63"   # Vibrant Pink
@@ -770,7 +770,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
             award_color = "#FFD600"   # Metallic Gold
-        elif award_name == "SPOT Award":
+        elif award_name == "Spot Award":
             award_color = "#00E676"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#E91E63"   # Vibrant Pink
@@ -849,7 +849,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 award_color = "#FF1744"   # Hot Crimson
             elif award_name == "Impact Award":
                 award_color = "#FFD600"   # Metallic Gold
-            elif award_name == "SPOT Award":
+            elif award_name == "Spot Award":
                 award_color = "#00E676"   # Neon Green
             elif award_name == "Special Mentions":
                 award_color = "#E91E63"   # Vibrant Pink
