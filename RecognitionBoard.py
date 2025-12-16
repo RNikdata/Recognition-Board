@@ -869,6 +869,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     winners_html += """<div style='position:absolute;top:-6px;right:-6px;z-index:10;background:#ff3b3b;color:#fff;font-size:10px;font-weight:bold;padding:2px 6px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.3);'>NEW</div>"""
                 winners_html += "</div>"
                 winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['account']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
@@ -1088,6 +1089,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
+                    "account": row["Account Name"],
                     "photo": photo_url,
                     "is_new": is_new   # ✅ flag for floating indicator
                 })
