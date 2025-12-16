@@ -982,7 +982,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 (merged_df["Which title would you like to nominate yourself for?"] == names) &
                 (merged_df["BU Head Approval Status"] == "Approved")
             ].copy()
-
+            st.dataframe(award_df)
             width = 290
             height = 230
 
