@@ -347,8 +347,24 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         
             # Save back to Excel (only original df columns + new comment column)
             cols_to_save = df.columns.tolist()
+
+            columns_to_keep = [
+                "Nomination ID",
+                "Employee ID",
+                "Account",
+                "Which title would you like to nominate yourself for?",
+                "Please state your reasons for your self-nomination",
+                "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?",
+                "AL Approval Status",
+                "AL Comment",
+                "BU Head Approval Status",
+                "BU Head Comment",
+                "BU Head Rank"
+            ]
+
+            filtered_df = merged_df[columns_to_keep]
             
-            set_with_dataframe(nomination_sheet, merged_df)
+            set_with_dataframe(nomination_sheet, filtered_df)
 
             # Clear the text area after submission
             st.session_state["al_comment_input"] = ""
