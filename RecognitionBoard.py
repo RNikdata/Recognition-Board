@@ -483,7 +483,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         "Momentum Maker Award",
         "Apex Innovator Award",
         "Ripple Effect Award",
-        "Foundation Builder Award ",
+        "Foundation Builder Award",
         "Trailblazer Tactician Award"]
 
     
