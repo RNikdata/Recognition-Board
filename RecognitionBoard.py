@@ -694,6 +694,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             <br>
             <img src='{photo_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>
             <div style='font-size:14px; font-weight:bold; color:#888888;'>{winner_name}</div>
+            <div style='font-size:12px; font-weight:600; color:#555555;'>{winner_account}</div>
             <div style='font-size:14px;  color:#888888;'>{winner_id}</div>
         </div>
     
