@@ -918,7 +918,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
                 <div style='display:flex; align-items:center; gap:6px;font-weight:bold; font-size:20px; margin-bottom:10px;background:{award_color}; color:#EBF4FD;padding:4px 8px; border-radius:6px;width:fit-content;'>
-                    <span>🏆 {award_name}</span>
+                    <span>🏆 {award_name} (26)</span>
                 </div>
                 <!-- Winners section in 2 columns -->
                 <div style='flex:1; display:flex; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
