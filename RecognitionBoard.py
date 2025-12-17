@@ -44,10 +44,11 @@ try:
 
     # --- Merge nomination data with employee data ---
     merged_df = df.merge(df1[columns_from_df1], left_on="Employee ID", right_on="Employee Id", how="left")
+
     merged_df["Employee ID"] = (
-        pd.to_numeric(merged_df["Employee Id"], errors="coerce")
-        .fillna(0)
-        .astype(int)
+        merged_df["Employee Id"]
+        .astype(str)
+        .str.strip()
     )
 
     # --- Ensure approval status columns exist ---
