@@ -872,7 +872,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     🏆 {award_name}
                 </div>
                 <!-- Winners section in 2 columns -->
-                <div style='flex:1; display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
+                <div style='flex:1; display:grid; grid-template-columns: 1fr; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
                     {winners_html}
                 </div>
             </div>
