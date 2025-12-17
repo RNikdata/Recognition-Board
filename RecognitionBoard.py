@@ -1167,6 +1167,6 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 })
         
 
-        box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=470)
+        box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=475)
         st.markdown(box_html2, unsafe_allow_html=True)
         st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
