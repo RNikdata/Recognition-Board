@@ -908,7 +908,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#3A3A3A"   # Vibrant Pink
         else:
             award_color = "#D4AF37"   # Default Gold
-        
+        award_name = "Spot Award (26)
         # If winners list is empty, show "No Winners"
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
@@ -918,7 +918,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
                 <div style='display:flex; align-items:center; gap:6px;font-weight:bold; font-size:20px; margin-bottom:10px;background:{award_color}; color:#EBF4FD;padding:4px 8px; border-radius:6px;width:fit-content;'>
-                    <span>🏆 {award_name} (26)</span>
+                    <span>🏆 {award_name} </span>
                 </div>
                 <!-- Winners section in 2 columns -->
                 <div style='flex:1; display:flex; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
