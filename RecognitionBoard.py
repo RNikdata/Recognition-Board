@@ -1095,7 +1095,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
                 
                 winners_list.append({
@@ -1119,7 +1119,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
     
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
                 
                 winners_list.append({
@@ -1148,7 +1148,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         
         if not award_df.empty:
             for _, row in award_df.iterrows():
-                emp_id = str(int(row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
                 photo_url = fetch_employee_url(emp_id)
         
                 is_new = row["Which title would you like to nominate yourself for?"] == "Spot Award"
