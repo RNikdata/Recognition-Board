@@ -918,8 +918,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                         border-radius: 12px; padding: 10px; color: white; display: flex; flex-direction: column;
                         box-shadow: 0px 4px 10px rgba(0,0,0,0.3); margin: 5px 0;">
                 <!-- Award Name -->
-                <div style='font-weight:bold; font-size:20px; margin-bottom:10px; background:{award_color}; color:#EBF4FD; padding:4px 8px; border-radius:6px; display:inline-block; text-align:left;'>
-                    🏆 {award_name} <span style="font-size:14px; opacity:0.9;">({winner_count})</span>
+                <div style='display:flex; align-items:center; gap:6px;font-weight:bold; font-size:20px; margin-bottom:10px;background:{award_color}; color:#EBF4FD;padding:4px 8px; border-radius:6px;width:fit-content;'>
+                    <span>🏆 {award_name}</span> <span style="font-size:14px; opacity:0.9;">({winner_count})</span>
                 </div>
                 <!-- Winners section in 2 columns -->
                 <div style='flex:1; display:flex; gap:10px; justify-content:center; align-items:start; overflow-y:auto;'>
