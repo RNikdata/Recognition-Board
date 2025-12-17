@@ -714,13 +714,13 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
-            award_color = "#D4AF37"   # Metallic Gold
+            award_color = "#E6C15A"   # Metallic Gold
         elif award_name == "Spot Award":
             award_color = "#C0C0C0"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#3A3A3A"   # Vibrant Pink
         else:
-            award_color = "#D4AF37"   # Default Gold
+            award_color = "#E6C15A"   # Default Gold
             
         # Build Rising Stars HTML
         rising_html = ""
@@ -822,13 +822,13 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
-            award_color = "#D4AF37"   # Metallic Gold
+            award_color = "#E6C15A"   # Metallic Gold
         elif award_name == "Spot Award":
             award_color = "#C0C0C0"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#3A3A3A"   # Vibrant Pink
         else:
-            award_color = "#D4AF37"   # Default Gold
+            award_color = "#E6C15A"   # Default Gold
         
         # If winners list is empty, show "No Winners"
         if not winners:
@@ -897,13 +897,13 @@ elif st.session_state.get("active_page") == "Final Display Board":
         elif award_name == "Trailblazer Tactician Award":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
-            award_color = "#D4AF37"   # Metallic Gold
+            award_color = "#E6C15A"   # Metallic Gold
         elif award_name == "Spot Award":
             award_color = "#C0C0C0"   # Neon Green
         elif award_name == "Special Mentions":
             award_color = "#3A3A3A"   # Vibrant Pink
         else:
-            award_color = "#D4AF37"   # Default Gold
+            award_color = "#E6C15A"   # Default Gold
         
         # If winners list is empty, show "No Winners"
         if not winners:
@@ -977,13 +977,13 @@ elif st.session_state.get("active_page") == "Final Display Board":
             elif award_name == "Trailblazer Tactician Award":
                 award_color = "#FF1744"   # Hot Crimson
             elif award_name == "Impact Award":
-                award_color = "#D4AF37"   # Metallic Gold
+                award_color = "#E6C15A"   # Metallic Gold
             elif award_name == "Spot Award":
                 award_color = "#C0C0C0"   # Neon Green
             elif award_name == "Special Mentions":
                 award_color = "#3A3A3A"   # Vibrant Pink
             else:
-                award_color = "#D4AF37"   # Default Gold
+                award_color = "#E6C15A"   # Default Gold
             
             # If winners list is empty, show "No Winners"
             if not winners:
