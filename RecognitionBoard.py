@@ -1042,7 +1042,68 @@ elif st.session_state.get("active_page") == "Final Display Board":
     col1, col2 = st.columns([4, 1])
        
     with col1:
-        # First two rows with 4 boxes each
+
+        # Second row box (smaller)
+        award_df = merged_df[
+                (merged_df["Which title would you like to nominate yourself for?"] == "Impact Award") &
+                (merged_df["BU Head Approval Status"] == "Approved")
+            ].copy()
+        winners_list = []
+    
+        if not award_df.empty:
+            for _, row in award_df.iterrows():
+                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                photo_url = fetch_employee_url(emp_id)
+                
+                winners_list.append({
+                    "name": row["Employee Name"],
+                    "id": row["Employee ID"],
+                    "account": row["Account Name"],
+                    "photo": photo_url
+                })
+
+        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=230)
+        st.markdown(box_html3, unsafe_allow_html=True)
+        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
+
+        award_df = merged_df[
+            ((merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") & (merged_df["BU Head Approval Status"] == "Approved")) |
+                (
+                    merged_df["Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?"]
+                    .str.strip()
+                    .str.upper() == "YES"
+                )
+        ].copy()
+
+        award_df = award_df.drop_duplicates(subset=["Employee ID"])
+        
+        winners_list = []
+        
+        if not award_df.empty:
+            for _, row in award_df.iterrows():
+                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
+                photo_url = fetch_employee_url(emp_id)
+        
+                is_new = row["Which title would you like to nominate yourself for?"] == "Spot Award"
+        
+                winners_list.append({
+                    "name": row["Employee Name"],
+                    "id": row["Employee ID"],
+                    "account": row["Account Name"],
+                    "photo": photo_url,
+                    "is_new": is_new   # ✅ flag for floating indicator
+                })
+        
+
+        box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=475)
+        st.markdown(box_html2, unsafe_allow_html=True)
+        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
+
+        
+
+    with col2:
+    
+       # First two rows with 4 boxes each
         total_boxes = 8
         cols_per_row = 4
         
@@ -1112,61 +1173,3 @@ elif st.session_state.get("active_page") == "Final Display Board":
 
         box_html0 = get_box_html_sm_multiple("Special Mentions", winners_list,height=220)
         st.markdown(box_html0, unsafe_allow_html=True)
-
-    with col2:
-    
-        # Second row box (smaller)
-        award_df = merged_df[
-                (merged_df["Which title would you like to nominate yourself for?"] == "Impact Award") &
-                (merged_df["BU Head Approval Status"] == "Approved")
-            ].copy()
-        winners_list = []
-    
-        if not award_df.empty:
-            for _, row in award_df.iterrows():
-                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
-                photo_url = fetch_employee_url(emp_id)
-                
-                winners_list.append({
-                    "name": row["Employee Name"],
-                    "id": row["Employee ID"],
-                    "account": row["Account Name"],
-                    "photo": photo_url
-                })
-
-        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=230)
-        st.markdown(box_html3, unsafe_allow_html=True)
-        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
-
-        award_df = merged_df[
-            ((merged_df["Which title would you like to nominate yourself for?"] == "Spot Award") & (merged_df["BU Head Approval Status"] == "Approved")) |
-                (
-                    merged_df["Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?"]
-                    .str.strip()
-                    .str.upper() == "YES"
-                )
-        ].copy()
-
-        award_df = award_df.drop_duplicates(subset=["Employee ID"])
-        
-        winners_list = []
-        
-        if not award_df.empty:
-            for _, row in award_df.iterrows():
-                emp_id = str((row["Employee ID"])) if pd.notna(row["Employee ID"]) else ""
-                photo_url = fetch_employee_url(emp_id)
-        
-                is_new = row["Which title would you like to nominate yourself for?"] == "Spot Award"
-        
-                winners_list.append({
-                    "name": row["Employee Name"],
-                    "id": row["Employee ID"],
-                    "account": row["Account Name"],
-                    "photo": photo_url,
-                    "is_new": is_new   # ✅ flag for floating indicator
-                })
-        
-
-        box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=475)
-        st.markdown(box_html2, unsafe_allow_html=True)
-        st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
