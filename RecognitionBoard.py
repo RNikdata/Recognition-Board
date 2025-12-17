@@ -1134,7 +1134,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     "photo": photo_url
                 })
 
-        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=355)
+        box_html3 = get_box_html_impact_multiple("Impact Award", winners_list, width=290, height=255)
         st.markdown(box_html3, unsafe_allow_html=True)
         st.markdown("<div style='margin:10px 0;'></div>", unsafe_allow_html=True)
 
