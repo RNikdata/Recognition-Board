@@ -282,6 +282,8 @@ elif st.session_state.get("active_page") == "AL Selection Board":
     st.sidebar.header("🔎 Search")
     resource_search = st.sidebar.text_input("Search Employee Name or ID",placeholder = "Employe ID/Name")
 
+    merged_df_full  = merged_df.copy()
+
     if account_filter:
         merged_df = merged_df[merged_df["Account Name"].isin(account_filter)]
     if manager_filter:
@@ -305,7 +307,10 @@ elif st.session_state.get("active_page") == "AL Selection Board":
             "Please state your reasons for your self-nomination": "Self Nomination Reason",
             "Have you received any Spot Awards in the last six months (H2: Jul–Dec 2025)?" : "Spot Award in last 6 months"
         })
-        df_display= df_display[df_display["Nominated Title"] != "Special Mentions"]
+        
+        exclude_titles = ["Special Mentions", "Spot Award", "Impact Award"]
+        df_display = df_display[~df_display["Nominated Title"].isin(exclude_titles)]
+        
         # Function to color status
         def color_status(val):
             if val == "Approved":
@@ -347,6 +352,30 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         
             # Update comments for selected nomination
             merged_df.loc[merged_df["Nomination ID"] == selected_id, "AL Comment"] = al_comment
+
+            updated_rows = merged_df[
+                merged_df["AL Approval Status"].isin(["Approved", "Rejected"])
+            ][["Nomination ID", "AL Approval Status", "AL Comment"]]
+
+            merged_df_full = merged_df_full.merge(
+                updated_rows,
+                on="Nomination ID",
+                how="left",
+                suffixes=("", "_new")
+            )
+            
+            # Overwrite only where new values exist
+            merged_df_full["AL Approval Status"] = merged_df_full["AL Approval Status_new"] \
+                .combine_first(merged_df_full["AL Approval Status"])
+            
+            merged_df_full["AL Comment"] = merged_df_full["AL Comment_new"] \
+                .combine_first(merged_df_full["AL Comment"])
+            
+            # Cleanup helper columns
+            merged_df_full.drop(
+                columns=["AL Approval Status_new", "AL Comment_new"],
+                inplace=True
+            )
         
             # Save back to Excel (only original df columns + new comment column)
             cols_to_save = df.columns.tolist()
@@ -365,7 +394,7 @@ elif st.session_state.get("active_page") == "AL Selection Board":
                 "BU Head Rank"
             ]
 
-            filtered_df = merged_df[columns_to_keep]
+            filtered_df = merged_df_full[columns_to_keep]
             
             set_with_dataframe(nomination_sheet, filtered_df)
 
