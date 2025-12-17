@@ -822,9 +822,9 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#D500F9"   # Electric Blue
         elif award_name == "Ripple Effect Award":
             award_color = "#00C853"   # Turquoise Cyan
-        elif award_name == "Foundation Builder Award":
+        elif award_name == "Foundation Builder":
             award_color = "#1A237E"   # Vibrant Amber
-        elif award_name == "Trailblazer Tactician Award":
+        elif award_name == "Trailblazer Tactician":
             award_color = "#FF1744"   # Hot Crimson
         elif award_name == "Impact Award":
             award_color = "#D4AF37"   # Metallic Gold
