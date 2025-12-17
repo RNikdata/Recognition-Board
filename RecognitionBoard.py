@@ -311,7 +311,11 @@ elif st.session_state.get("active_page") == "AL Selection Board":
         
         exclude_titles = ["Special Mentions", "Spot Award", "Impact Award"]
         df_display = df_display[~df_display["Nominated Title"].isin(exclude_titles)]
-        
+        df_display = df_display[
+            df_display["Nomination ID"].notna() &
+            (df_display["Nomination ID"].astype(str).str.strip() != "")
+        ]
+
         # Function to color status
         def color_status(val):
             if val == "Approved":
