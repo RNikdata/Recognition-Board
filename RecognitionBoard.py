@@ -880,7 +880,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
         return html
 
     def get_box_html_spot_multiple(award_name, winners, width, height):
-        award_name = Spot Award (26)    
+        award_name = "Spot Award (26)"    
         """
         winners: list of dicts with keys 'name', 'id', 'photo'
         """
