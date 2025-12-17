@@ -908,7 +908,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
             award_color = "#3A3A3A"   # Vibrant Pink
         else:
             award_color = "#D4AF37"   # Default Gold
-        award_name = "Spot Award (26)
+        award_name = "Spot Award (26)"
         # If winners list is empty, show "No Winners"
         if not winners:
             winners_html = "<div style='display:flex; justify-content:center; align-items:center; font-size:22px; text-align:center; width:100%;height:100%;'>No Winners</div>"
