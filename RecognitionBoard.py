@@ -421,6 +421,8 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
     st.sidebar.header("🔎 Search")
     resource_search = st.sidebar.text_input("Search Employee Name or ID",placeholder = "Employe ID/Name")
 
+    merged_df_full  = merged_df.copy()
+
     if account_filter:
         merged_df = merged_df[merged_df["Account Name"].isin(account_filter)]
     if manager_filter:
@@ -530,9 +532,43 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
                     merged_df["Nomination ID"] == selected_id,
                     "BU Head Rank"
                 ] = bu_rank_value
-                
-                # Save Rank
-                #merged_df.loc[merged_df["Nomination ID"] == selected_id, "BU Head Rank"] = (int(bu_rank) if bu_rank.isdigit() else np.nan )
+
+                updated_rows = merged_df[
+                    merged_df["BU Head Approval Status"].isin(["Approved", "Rejected"])
+                ][
+                    ["Nomination ID", "BU Head Approval Status", "BU Head Comment", "BU Head Rank"]
+                ]
+
+                merged_df_full = merged_df_full.merge(
+                    updated_rows,
+                    on="Nomination ID",
+                    how="left",
+                    suffixes=("", "_new")
+                )
+
+                merged_df_full["BU Head Approval Status"] = (
+                    merged_df_full["BU Head Approval Status_new"]
+                    .combine_first(merged_df_full["BU Head Approval Status"])
+                )
+
+                merged_df_full["BU Head Comment"] = (
+                    merged_df_full["BU Head Comment_new"]
+                    .combine_first(merged_df_full["BU Head Comment"])
+                )
+
+                merged_df_full["BU Head Rank"] = (
+                    merged_df_full["BU Head Rank_new"]
+                    .combine_first(merged_df_full["BU Head Rank"])
+                )
+
+                merged_df_full.drop(
+                    columns=[
+                        "BU Head Approval Status_new",
+                        "BU Head Comment_new",
+                        "BU Head Rank_new"
+                    ],
+                    inplace=True
+                )
 
                 columns_to_keep = [
                     "Nomination ID",
@@ -548,7 +584,7 @@ elif st.session_state.get("active_page") == "BU Head Selection Board":
                     "BU Head Rank"
                 ]
     
-                filtered_df = merged_df[columns_to_keep]
+                filtered_df = merged_df_full[columns_to_keep]
                 
                 set_with_dataframe(nomination_sheet, filtered_df)
                 
@@ -818,6 +854,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 if w.get('photo', "") != "":
                     winners_html += f"<img src='{w['photo']}' style='width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff; margin-bottom:5px;'>"
                 winners_html += f"<div style='font-size:12px; color:#888888;font-weight:bold; text-align:center;'>{w['name']}</div>"
+                winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['account']}</div>"
                 winners_html += f"<div style='font-size:11px; color:#888888; text-align:center;'>{w['id']}</div>"
                 winners_html += "</div>"
     
@@ -1088,6 +1125,7 @@ elif st.session_state.get("active_page") == "Final Display Board":
                 winners_list.append({
                     "name": row["Employee Name"],
                     "id": row["Employee ID"],
+                    "account": row["Account Name"],
                     "photo": photo_url
                 })
 
