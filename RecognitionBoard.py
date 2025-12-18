@@ -254,8 +254,30 @@ if st.session_state.get("active_page") == "Nomination Form":
     col1, col2 = st.columns(2)
 
     for i, award in enumerate(awards):
+
+        award_title = award['title']
+
+        if "Anchor of Trust" in award_title:
+            bg_color = "#0D1B3D"   # Deep Blue
+        elif "Knowledge Catalyst" in award_title:
+            bg_color = "#2A0F3F"   # Purple
+        elif "Efficiency Architect" in award_title:
+            bg_color = "#003D33"   # Teal
+        elif "Momentum Maker" in award_title:
+            bg_color = "#3D1F00"   # Orange/Brown
+        elif "Apex Innovator" in award_title:
+            bg_color = "#3A003F"   # Magenta
+        elif "Ripple Effect" in award_title:
+            bg_color = "#003314"   # Green
+        elif "Foundation Builder" in award_title:
+            bg_color = "#0B102E"   # Indigo
+        elif "Trailblazer Tactician" in award_title:
+            bg_color = "#3A000A"   # Crimson
+        else:
+            bg_color = "#1C1C1C"   # Default dark
+            
         html_content = f"""
-        <div style='border:1px solid #555555; border-radius:8px; padding:15px; margin-bottom:15px; background: linear-gradient(135deg, #1C1C1C, #2F2F2F);
+        <div style='border:1px solid #555555; border-radius:8px; padding:15px; margin-bottom:15px; background: linear-gradient(135deg, {bg_color}, #2F2F2F);
 color:white;'>
             <p style='font-weight:bold; font-size:15px; margin-bottom:10px;'>{award['title']}</p>
             <ul style='margin-left:15px;'>
