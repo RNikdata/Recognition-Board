@@ -1114,7 +1114,8 @@ elif st.session_state.get("active_page") == "Final Display Board":
                     "photo": photo_url,
                     "is_new": is_new   # ✅ flag for floating indicator
                 })
-        
+
+        winners_list.sort(key=lambda x: x["is_new"], reverse=True)
 
         box_html2 = get_box_html_spot_multiple("Spot Award", winners_list, width=290, height=475)
         st.markdown(box_html2, unsafe_allow_html=True)
