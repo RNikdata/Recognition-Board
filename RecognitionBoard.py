@@ -277,7 +277,7 @@ if st.session_state.get("active_page") == "Nomination Form":
             bg_color = "#D4AF37"   # Default dark
             
         html_content = f"""
-        <div style='border:1px solid #555555; border-radius:8px; padding:15px; margin-bottom:15px; background: linear-gradient(135deg, {bg_color}, #9CA3AF);
+        <div style='border:1px solid #555555; border-radius:8px; padding:15px; margin-bottom:15px; background: linear-gradient(135deg, {bg_color}, #2F2F2F);
 color:white;'>
             <p style='font-weight:bold; font-size:15px; margin-bottom:10px;'>{award['title']}</p>
             <ul style='margin-left:15px;'>
