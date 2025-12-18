@@ -258,23 +258,23 @@ if st.session_state.get("active_page") == "Nomination Form":
         award_title = award['title']
 
         if "Anchor of Trust" in award_title:
-            bg_color = "#0D1B3D"   # Deep Blue
+            bg_color = "#0047FF"   # Deep Blue
         elif "Knowledge Catalyst" in award_title:
-            bg_color = "#2A0F3F"   # Purple
+            bg_color = "#9C27B0"   # Purple
         elif "Efficiency Architect" in award_title:
-            bg_color = "#003D33"   # Teal
+            bg_color = "#00BFA5"   # Teal
         elif "Momentum Maker" in award_title:
-            bg_color = "#3D1F00"   # Orange/Brown
+            bg_color = "#FF6D00"   # Orange/Brown
         elif "Apex Innovator" in award_title:
-            bg_color = "#3A003F"   # Magenta
+            bg_color = "#D500F9"   # Magenta
         elif "Ripple Effect" in award_title:
-            bg_color = "#003314"   # Green
+            bg_color = "#00C853"   # Green
         elif "Foundation Builder" in award_title:
-            bg_color = "#0B102E"   # Indigo
+            bg_color = "#1A237E"   # Indigo
         elif "Trailblazer Tactician" in award_title:
-            bg_color = "#3A000A"   # Crimson
+            bg_color = "#FF1744"   # Crimson
         else:
-            bg_color = "#1C1C1C"   # Default dark
+            bg_color = "#D4AF37"   # Default dark
             
         html_content = f"""
         <div style='border:1px solid #555555; border-radius:8px; padding:15px; margin-bottom:15px; background: {bg_color};
